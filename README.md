@@ -9,8 +9,17 @@ This package started as Java port of the implementation by Nathan Fiedler, and t
 
 # Usage
 
+```xml
+
+<dependency>
+    <groupId>io.github.Farley-Chen</groupId>
+    <artifactId>fastcdc-java</artifactId>
+    <version>1.0.1</version>
+</dependency>
+```
+
 ```java
-package com.lagseeing.fastcdc;
+package io.github.farleychen.fastcdc;
 
 import org.apache.commons.codec.digest.DigestUtils;
 

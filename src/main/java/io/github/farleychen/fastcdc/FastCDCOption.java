@@ -1,4 +1,4 @@
-package com.lagseeing.fastcdc;
+package io.github.farleychen.fastcdc;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

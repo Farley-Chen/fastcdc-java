@@ -1,11 +1,10 @@
-package com.lagseeing.fastcdc;
+package io.github.farleychen.fastcdc;
 
 import java.io.InputStream;
 import java.util.Iterator;
 import java.util.function.Function;
 
-import static com.lagseeing.fastcdc.Const.*;
-import static com.lagseeing.fastcdc.Utils.*;
+import static io.github.farleychen.fastcdc.Utils.*;
 
 /**
  * @author FengChen
@@ -35,12 +34,12 @@ public class ChunkIterator implements Iterator<Chunk> {
         Assert.isTrue(maxSize > 0);
         Assert.isTrue(minSize <= avgSize);
         Assert.isTrue(avgSize <= maxSize);
-        Assert.isTrue(minSize >= MINIMUM_MIN);
-        Assert.isTrue(minSize <= MINIMUM_MAX);
-        Assert.isTrue(avgSize >= AVERAGE_MIN);
-        Assert.isTrue(avgSize <= AVERAGE_MAX);
-        Assert.isTrue(maxSize >= MAXIMUM_MIN);
-        Assert.isTrue(maxSize <= MAXIMUM_MAX);
+        Assert.isTrue(minSize >= Const.MINIMUM_MIN);
+        Assert.isTrue(minSize <= Const.MINIMUM_MAX);
+        Assert.isTrue(avgSize >= Const.AVERAGE_MIN);
+        Assert.isTrue(avgSize <= Const.AVERAGE_MAX);
+        Assert.isTrue(maxSize >= Const.MAXIMUM_MIN);
+        Assert.isTrue(maxSize <= Const.MAXIMUM_MAX);
 
         this.stream = stream;
         this.minSize = minSize;
@@ -92,7 +91,7 @@ public class ChunkIterator implements Iterator<Chunk> {
         final int size = blob.size();
         int barrier = Math.min(centerSize, size);
         while (index < barrier) {
-            pattern = (pattern >>> 1) + GEAR[Byte.toUnsignedInt(blob.get(index))];
+            pattern = (pattern >>> 1) + Const.GEAR[Byte.toUnsignedInt(blob.get(index))];
             if ((pattern & maskS) == 0) {
                 return index + 1;
             }
@@ -100,7 +99,7 @@ public class ChunkIterator implements Iterator<Chunk> {
         }
         barrier = Math.min(maxSize, size);
         while (index < barrier) {
-            pattern = (pattern >>> 1) + GEAR[Byte.toUnsignedInt(blob.get(index))];
+            pattern = (pattern >>> 1) + Const.GEAR[Byte.toUnsignedInt(blob.get(index))];
             if ((pattern & maskL) == 0) {
                 return index + 1;
             }

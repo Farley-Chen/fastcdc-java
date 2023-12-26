@@ -4,7 +4,7 @@
 
     <groupId>io.github.Farley-Chen</groupId>
     <artifactId>fastcdc-java</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>fastcdc-java</name>
     <description>This package implements the "FastCDC" content defined chunking algorithm in Java.</description>
 

@@ -1,4 +1,4 @@
-package com.lagseeing.fastcdc;
+package io.github.farleychen.fastcdc;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.collections4.IteratorUtils;
@@ -17,7 +17,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.Objects;
 
-import static com.lagseeing.fastcdc.FastCDC.chunk;
+import static io.github.farleychen.fastcdc.FastCDC.chunk;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 

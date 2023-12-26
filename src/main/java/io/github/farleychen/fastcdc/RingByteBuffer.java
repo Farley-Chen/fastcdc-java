@@ -1,4 +1,4 @@
-package com.lagseeing.fastcdc;
+package io.github.farleychen.fastcdc;
 
 import org.apache.commons.lang3.ArrayUtils;
 
