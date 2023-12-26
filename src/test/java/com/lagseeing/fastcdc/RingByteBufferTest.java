@@ -85,9 +85,11 @@ class RingByteBufferTest {
         final var buffer = new RingByteBuffer(10);
         buffer.addAll(new byte[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9});
         assertThatThrownBy(() -> buffer.add((byte)10)).isInstanceOf(RuntimeException.class);
+        assertThatThrownBy(() -> buffer.addAll(new byte[] {10})).isInstanceOf(RuntimeException.class);
         buffer.position(4);
         buffer.addAll(new byte[] {10, 11, 12, 13});
         assertThatThrownBy(() -> buffer.add((byte)14)).isInstanceOf(RuntimeException.class);
+        assertThatThrownBy(() -> buffer.addAll(new byte[] {14})).isInstanceOf(RuntimeException.class);
     }
 
     @Test

@@ -66,9 +66,9 @@ class RingByteBuffer {
         if (count < index) {
             throw new RuntimeException("Ring byte buffer underflow");
         }
-        count -= index;
         // wrap-around
         indexOut = (indexOut + index) % buffer.length;
+        count -= index;
     }
 
     byte get(final int index) {
@@ -89,6 +89,7 @@ class RingByteBuffer {
         if (fromInclusive == toExclusive) {
             return EMPTY_BYTE_ARRAY;
         }
+        // wrap-around
         final int from = (indexOut + fromInclusive) % buffer.length;
         final int to = (indexOut + toExclusive) % buffer.length;
         if (from < to) {
