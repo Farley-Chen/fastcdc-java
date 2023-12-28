@@ -4,7 +4,7 @@
 
     <groupId>io.github.Farley-Chen</groupId>
     <artifactId>fastcdc-java</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>fastcdc-java</name>
     <description>This package implements the "FastCDC" content defined chunking algorithm in Java.</description>
 
@@ -39,7 +39,6 @@
         <maven.compiler.release>${java.version}</maven.compiler.release>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <commons-lang3.version>3.12.0</commons-lang3.version>
         <assertj-core.version>3.24.2</assertj-core.version>
         <commons-collections4.version>4.4</commons-collections4.version>
         <lombok.version>1.18.30</lombok.version>
@@ -48,11 +47,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

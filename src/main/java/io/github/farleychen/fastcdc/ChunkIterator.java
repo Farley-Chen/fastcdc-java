@@ -17,7 +17,7 @@ public class ChunkIterator implements Iterator<Chunk> {
     private final int maskS;
     private final int maskL;
     private final int readSize;
-    private final RingByteBuffer blob;
+    private final RingByteArray blob;
     private long offset;
     private final int minSize;
     private final int avgSize;
@@ -53,7 +53,7 @@ public class ChunkIterator implements Iterator<Chunk> {
         maskL = mask(bits - 1);
 
         readSize = Math.max(1024 * 64, maxSize);
-        blob = new RingByteBuffer(readSize * 2);
+        blob = new RingByteArray(readSize * 2);
         blob.addAll(readNBytes(stream, readSize));
         offset = 0;
     }
@@ -84,7 +84,7 @@ public class ChunkIterator implements Iterator<Chunk> {
     }
 
     private int cdcOffset(
-        final RingByteBuffer blob, final int minSize, final int avgSize, final int maxSize, final int centerSize,
+        final RingByteArray blob, final int minSize, final int avgSize, final int maxSize, final int centerSize,
         final int maskS, final int maskL) {
         int pattern = 0;
         int index = minSize;
