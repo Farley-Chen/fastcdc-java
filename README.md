@@ -12,9 +12,9 @@ This package started as Java port of the implementation by Nathan Fiedler, and t
 ```xml
 
 <dependency>
-    <groupId>io.github.Farley-Chen</groupId>
+    <groupId>io.github.farley-chen</groupId>
     <artifactId>fastcdc-java</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 </dependency>
 ```
 
