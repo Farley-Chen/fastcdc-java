@@ -110,7 +110,7 @@ class FastCDCTest {
     }
 
     @Test
-    public void test_sekien_16k_chunks() {
+    public void testSekien16kChunks() {
         final var chunkIterator = chunk(
             inputStream, new FastCDCOption().setAvgSize(16384)
                 .setMinSize(8192)
@@ -144,7 +144,7 @@ class FastCDCTest {
     }
 
     @Test
-    public void test_sekien_32k_chunks() {
+    public void testSekien32kChunks() {
         final var chunkIterator = chunk(
             inputStream, new FastCDCOption().setAvgSize(32768)
                 .setMinSize(16384)
@@ -166,7 +166,7 @@ class FastCDCTest {
     }
 
     @Test
-    public void test_sekien_64k_chunks() {
+    public void testSekien64kChunks() {
         final var chunkIterator = chunk(
             inputStream, new FastCDCOption().setAvgSize(65536)
                 .setMinSize(32768)
@@ -184,7 +184,7 @@ class FastCDCTest {
     }
 
     @Test
-    public void test_chunk_generator_py_fat() throws IOException {
+    public void testChunkGeneratorPyFat() throws IOException {
         final var chunkIterator = chunk(
             inputStream, new FastCDCOption().setAvgSize(1024)
                 .setMinSize(256)
@@ -203,4 +203,34 @@ class FastCDCTest {
             }
         }
     }
+
+    @Test
+    public void testChunkLengthLessThanMinSize() {
+        final var buf = new byte[] {
+            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
+        final var inputStream = new ByteArrayInputStream(buf);
+        final var chunkIterator = chunk(
+            inputStream, new FastCDCOption().setAvgSize(16384)
+                .setMinSize(8192)
+                .setMaxSize(32768));
+        final var chunks = IteratorUtils.toList(chunkIterator);
+        assertThat(chunks).hasSize(1);
+        assertThat(chunks.get(0)
+            .getOffset()).isEqualTo(0);
+        assertThat(chunks.get(0)
+            .getLength()).isEqualTo(20);
+    }
+
+    @Test
+    public void testChunkLengthZero() {
+        final var buf = new byte[0];
+        final var inputStream = new ByteArrayInputStream(buf);
+        final var chunkIterator = chunk(
+            inputStream, new FastCDCOption().setAvgSize(16384)
+                .setMinSize(8192)
+                .setMaxSize(32768));
+        final var chunks = IteratorUtils.toList(chunkIterator);
+        assertThat(chunks).isEmpty();
+    }
+
 }
