@@ -86,6 +86,9 @@ public class ChunkIterator implements Iterator<Chunk> {
     private int cdcOffset(
         final RingByteArray blob, final int minSize, final int avgSize, final int maxSize, final int centerSize,
         final int maskS, final int maskL) {
+        if (blob.size() < minSize) {
+            return blob.size();
+        }
         int pattern = 0;
         int index = minSize;
         final int size = blob.size();
