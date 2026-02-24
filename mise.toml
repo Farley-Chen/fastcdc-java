@@ -2,17 +2,17 @@
 java = "11"
 
 [tasks.test]
-description = "运行单元测试（本地开发验证）"
+description = "Run unit tests (for local development)"
 run = "mvn test"
 
 [tasks."test:clean"]
-description = "运行单元测试（clean 后执行，用于排查异常）"
+description = "Run unit tests after cleaning (for troubleshooting build issues)"
 run = "mvn clean test"
 
 [tasks.build]
-description = "构建库产物（跳过测试，用于快速打包）"
+description = "Build library artifacts (skip tests, for fast packaging)"
 run = "mvn -DskipTests package"
 
 [tasks."build:clean"]
-description = "构建库产物（clean 后执行，跳过测试，用于发版或异常排查）"
+description = "Build library artifacts after cleaning (skip tests, for release or troubleshooting)"
 run = "mvn clean -DskipTests package"
