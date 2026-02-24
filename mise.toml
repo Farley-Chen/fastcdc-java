@@ -1,0 +1,18 @@
+[tools]
+java = "11"
+
+[tasks.test]
+description = "运行单元测试（本地开发验证）"
+run = "mvn test"
+
+[tasks."test:clean"]
+description = "运行单元测试（clean 后执行，用于排查异常）"
+run = "mvn clean test"
+
+[tasks.build]
+description = "构建库产物（跳过测试，用于快速打包）"
+run = "mvn -DskipTests package"
+
+[tasks."build:clean"]
+description = "构建库产物（clean 后执行，跳过测试，用于发版或异常排查）"
+run = "mvn clean -DskipTests package"
