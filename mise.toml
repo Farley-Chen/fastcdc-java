@@ -1,5 +1,5 @@
 [tools]
-java = "11"
+java = "temurin-11"
 
 [tasks.test]
 description = "Run unit tests (for local development)"
