@@ -2,10 +2,12 @@
 
 This package implements the "FastCDC" content defined chunking algorithm in Java.
 
-This package started as Java port of the implementation by Nathan Fiedler, and the code refer to `iscc/fastcdc-py`
-
-- [nlfiedler/fastcdc-rs](https://github.com/nlfiedler/fastcdc-rs)
-- [iscc/fastcdc-py](https://github.com/iscc/fastcdc-py)
+This Java implementation was written with reference to
+[iscc/fastcdc-py](https://github.com/iscc/fastcdc-py), which started as a port of
+Nathan Fiedler's [fastcdc-rs](https://github.com/nlfiedler/fastcdc-rs), itself
+based on [Ronomon's deduplication implementation](https://github.com/ronomon/deduplication).
+Source attribution and upstream implementation history are recorded in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 # Usage
 
@@ -47,3 +49,11 @@ public class Example {
 
 }
 ```
+
+# License and third-party sources
+
+Original project code is licensed under the [MIT License](LICENSE). Adapted
+portions retain their upstream MIT, BSD-3-Clause or Apache-2.0 terms; see
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and [licenses/](licenses/).
+These notices and license texts are included under `META-INF/` in the Maven
+binary and source JARs.

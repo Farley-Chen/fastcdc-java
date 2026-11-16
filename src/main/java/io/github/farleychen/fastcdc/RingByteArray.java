@@ -1,13 +1,20 @@
+/*
+ * Adapted from jMonkeyEngine RingBuffer.java; compared with v3.6.1-stable.
+ * Copyright (c) 2009-2023 jMonkeyEngine.
+ * Licensed under the BSD 3-Clause license; see
+ * licenses/jmonkeyengine-BSD-3-Clause.txt and THIRD_PARTY_NOTICES.md.
+ * Local changes: byte storage, renamed members, index/range access and bulk
+ * operations in place of the generic queue and iterator, added argument validation.
+ */
 package io.github.farleychen.fastcdc;
 
 import static io.github.farleychen.fastcdc.ArrayUtils.EMPTY_BYTE_ARRAY;
 import static io.github.farleychen.fastcdc.ArrayUtils.subarray;
 
 /**
- * refer to <a
- * href=https://github.com/jMonkeyEngine/jmonkeyengine/blob/master/jme3-ios/src/main/java/com/jme3/util/RingBuffer.java>jmonkeyengine</a>
- * <p>
- * A circular array (array with wrap-around).
+ * A circular array (array with wrap-around), adapted from jMonkeyEngine.
+ * <p>Compared with
+ * <a href="https://github.com/jMonkeyEngine/jmonkeyengine/blob/4de10c34f6d078e0cd1e32c16bdf5303ceb61e26/jme3-ios/src/main/java/com/jme3/util/RingBuffer.java">RingBuffer in jMonkeyEngine v3.6.1-stable</a>.
  *
  * @author FengChen
  */

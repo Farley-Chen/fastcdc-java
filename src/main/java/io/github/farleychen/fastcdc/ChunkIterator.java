@@ -1,3 +1,9 @@
+/*
+ * Chunk scanning and refill logic adapted from iscc/fastcdc-py.
+ * Copyright (c) 2020 Titusz Pan
+ * MIT license; see licenses/fastcdc-py-MIT.txt and THIRD_PARTY_NOTICES.md
+ * for sources, modifications and earlier implementation notices.
+ */
 package io.github.farleychen.fastcdc;
 
 import java.io.InputStream;
