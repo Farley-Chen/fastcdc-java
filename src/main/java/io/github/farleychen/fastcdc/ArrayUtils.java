@@ -14,13 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/*
+ * Byte-array utilities copied from Apache Commons Lang ArrayUtils.java.
+ * Copyright 2001-2021 The Apache Software Foundation
+ * Modified for this project: extracted the byte-array subset, changed package
+ * and imports, and adjusted formatting/documentation.
+ * See THIRD_PARTY_NOTICES.md for sources, license text and upstream NOTICE.
+ */
 package io.github.farleychen.fastcdc;
 
 import java.util.Arrays;
 
 /**
- * copy from <a
- * href="https://github.com/apache/commons-lang/blob/master/src/main/java/org/apache/commons/lang3/ArrayUtils.java">commons-lang3</a>
+ * Byte-array utilities copied from Apache Commons Lang.
+ * <p>Compared with
+ * <a href="https://github.com/apache/commons-lang/blob/rel/commons-lang-3.12.0/src/main/java/org/apache/commons/lang3/ArrayUtils.java">ArrayUtils in Commons Lang 3.12.0</a>.
  */
 public class ArrayUtils {
 
@@ -44,7 +53,6 @@ public class ArrayUtils {
      *                            length.
      * @return a new array containing the elements between the start and end indices.
      * @see Arrays#copyOfRange(byte[], int, int)
-     * @since 2.1
      */
     public static byte[] subarray(final byte[] array, int startIndexInclusive, int endIndexExclusive) {
         if (array == null) {
@@ -80,7 +88,6 @@ public class ArrayUtils {
      * @param array1 the first array whose elements are added to the new array.
      * @param array2 the second array whose elements are added to the new array.
      * @return The new byte[] array.
-     * @since 2.1
      */
     public static byte[] addAll(final byte[] array1, final byte... array2) {
         if (array1 == null) {
